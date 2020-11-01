@@ -7,11 +7,13 @@
             <h1><a href="">Johntopia</a></h1>
         </div>
         
-        <div>
-            <p>published: 2020.10.29, 13:01</p>
-            <h2><a href="">My first post</a></h2>
-            <p>This is my first post.</p>
-        </div>
+        {% for post in posts %}
+            <div>
+                <p>published: {{post.published_date}}</p>
+                <h1><a href="">{{post.title}}</a></h1>
+                <p>{{post.text|linebreaksbr}}</p>
+            </div>
+        {% endfor %}
         
     </body>
 </html>
